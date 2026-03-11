@@ -15,7 +15,7 @@
   background: linear-gradient(
     rgba(10,10,10,0.6),
     rgba(10,10,10,0.9)
-  ), url("../images/hero.jpg");
+  ), url("../images/hero.webp");
   background-size: cover;
   background-position: center;
 }
