@@ -1,0 +1,8 @@
+/* Hero Section */
+.hero-small {
+  padding-top: calc(var(--navbar-height) + 2rem);
+  padding-bottom: 4rem;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  text-align: center;
+}

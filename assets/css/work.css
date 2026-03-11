@@ -1,0 +1,121 @@
+/* Work Page Specific Styles */
+
+/* Hero Section */
+.hero-small {
+  padding-top: calc(var(--navbar-height) + 2rem);
+  padding-bottom: 4rem;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* Filter Section */
+.filter-section {padding-top: calc(var(--navbar-height)/2);}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.filter-button.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem 3rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  margin: 4rem 1rem 2rem;
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.cta-section a.cta-button {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-section a.cta-button:hover {
+  background-color: var(--color-on-secondary);
+  color: var(--color-secondary);
+}
