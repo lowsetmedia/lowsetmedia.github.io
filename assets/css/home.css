@@ -1,6 +1,3 @@
-
-
-
 /* =================================================
    HERO SECTION
    ================================================= */
@@ -11,7 +8,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 24px 80px;
   background: linear-gradient(
     rgba(10,10,10,0.6),
     rgba(10,10,10,0.9)
@@ -85,4 +81,14 @@
 .section a:hover {
   background: var(--color-text-main);
   color: var(--color-bg-main);
+}
+
+/**/
+
+.section {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  margin: 4rem 1rem 2rem;
+
 }

@@ -1,0 +1,6 @@
+/* Hero Section */
+.hero-small {
+  padding-top: calc(var(--navbar-height) * 5);
+  padding-bottom: 8rem;
+  text-align: center;
+}

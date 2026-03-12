@@ -1,0 +1,14 @@
+[
+    {
+        "title": "1",
+        "category": "",
+        "image": "../assets/images/project_preview/",
+        "link": "../projects/"
+    },
+    {
+        "title": "2",
+        "category": "",
+        "image": "../assets/images/project_preview/",
+        "link": "../projects/"
+    }
+]
