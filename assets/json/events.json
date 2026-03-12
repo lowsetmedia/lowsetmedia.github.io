@@ -4,11 +4,5 @@
         "category": "birthday",
         "image": "../assets/images/project_preview/events/1.webp",
         "link": "../projects/events/02-20-2026_Andres_Birthday.html"
-    },
-    {
-        "title": "2",
-        "category": "",
-        "image": "../assets/images/project_preview/events/2.webp",
-        "link": "../"
     }
 ]

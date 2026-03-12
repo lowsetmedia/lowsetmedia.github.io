@@ -1,14 +1,32 @@
 [
     {
+        "title": "002",
+        "category": "editorial",
+        "image": "../assets/images/project_preview/portrait/5.webp",
+        "link": "../projects/portraits/ae2_The_National.html"
+    },
+    {
+        "title": "001",
+        "category": "editorial",
+        "image": "../assets/images/project_preview/portrait/4.webp",
+        "link": "../projects/portraits/ae1_Motorcycle_Couple.html"
+    },
+    {
+        "title": "02-20 - Astro",
+        "category": "individual",
+        "image": "../assets/images/project_preview/portrait/2.webp",
+        "link": "../projects/portraits/02-20-2025_Astro.html"
+    },
+    {
+        "title": "02-20 - Sage",
+        "category": "individual",
+        "image": "../assets/images/project_preview/portrait/3.webp",
+        "link": "../projects/portraits/02-20-2025_Sage.html"
+    },
+    {
         "title": "10-05 - Caroline",
         "category": "individual",
         "image": "../assets/images/project_preview/portrait/1.webp",
         "link": "../projects/portraits/10-05-2025_Caroline.html"
-    },
-    {
-        "title": "2",
-        "category": "",
-        "image": "../assets/images/project_preview/portrait/",
-        "link": "../projects/portraits"
     }
 ]
