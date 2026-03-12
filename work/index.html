@@ -3,138 +3,78 @@
 
     <head>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device, initial-scale=1.0">
-        <title>LØWSET Media</title>
-        <link rel="stylesheet" href="../assets/css/global.css">
+        <div data-include="../assets/components/head.html"></div>
         <link rel="stylesheet" href="../assets/css/work.css">
-        <link rel="icon" type="image/png" href="../assets/logos/logo.png">
 
     </head>
 
     <body>
 
-        <header id="navbar">
+        <div data-include="../assets/components/navbar.html"></div>
 
-            <nav class="nav-container">
+        <main>
+            
+            <!-- HERO SECTION -->
+            <section class="hero hero-small">
 
-                <div class="brand">
-                    <span class="logo-text">LØWSET</span>
-                </div>
+                <div class="hero-content">
 
-                <div class="nav-right">
-
-                    <div class="nav-links">
-                        <a href="../home/index.html">Home</a>
-                        <a href="../work/index.html">Work</a>
-                        <a href="../films/index.html">Films</a>
-                        <a href="../book/index.html">Book</a>
-                        <a href="../godspeed/index.html">Godspeed</a>
-                    </div>
-
-                    <div class="hamburger" onclick="toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <h1>Work</h1>
+                    <p>
+                        Explore our cinematic photography and video portfolio.
+                    </p>
 
                 </div>
 
-            </nav>
+            </section>
 
-            <div id="mobileMenu" class="mobile-menu">
-                <a href="../home/index.html">Home</a>
-                <a href="../work/index.html">Work</a>
-                <a href="../films/index.html">Films</a>
-                <a href="../book/index.html">Book</a>
-                <a href="../godspeed/index.html">Godspeed</a>
-            </div>
+            <!-- WORK CATEGORIES -->
+            <section class="section work-categories">
 
-        </header>
+                <div class="category-grid">
 
-        <!-- HERO SECTION -->
-        <section class="hero hero-small">
+                    <a class="category-card" href="automotive.html">
+                        <img src="../assets/images/work/automotive/cover.webp" alt="Automotive Photography">
+                        <div class="category-overlay">
+                            <h2>Automotive</h2>
+                        </div>
+                    </a>
 
-            <div class="hero-content">
+                    <a class="category-card" href="portraits.html">
+                        <img src="../assets/images/work/portraits/cover.webp" alt="Portrait Photography">
+                        <div class="category-overlay">
+                            <h2>Portraits</h2>
+                        </div>
+                    </a>
 
-                <h1>Work</h1>
+                    <a class="category-card" href="events.html">
+                        <img src="../assets/images/work/events/cover.webp" alt="Event Photography">
+                        <div class="category-overlay">
+                            <h2>Events</h2>
+                        </div>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- CTA -->
+            <section class="cta-section">
+
+                <h2>Work With Us</h2>
                 <p>
-                    Explore our cinematic photography and video portfolio.
+                    Want cinematic photos or videos for your project?
                 </p>
+                <a href="../book/index.html">Book a Shoot</a>
 
-            </div>
+            </section>
+            
+        </main>
 
-        </section>
+        <div data-include="../assets/components/footer.html"></div>
 
-        
-
-        <!-- WORK CATEGORIES -->
-        <section class="section work-categories">
-
-            <div class="category-grid">
-
-                <a class="category-card" href="automotive.html">
-                    <img src="../assets/images/work/automotive/cover.webp" alt="Automotive Photography">
-                    <div class="category-overlay">
-                        <h2>Automotive</h2>
-                    </div>
-                </a>
-
-                <a class="category-card" href="portraits.html">
-                    <img src="../assets/images/work/portraits/cover.webp" alt="Portrait Photography">
-                    <div class="category-overlay">
-                        <h2>Portraits</h2>
-                    </div>
-                </a>
-
-                <a class="category-card" href="events.html">
-                    <img src="../assets/images/work/events/cover.webp" alt="Event Photography">
-                    <div class="category-overlay">
-                        <h2>Events</h2>
-                    </div>
-                </a>
-
-            </div>
-
-        </section>
-
-        <!-- CTA -->
-         <section class="cta-section">
-
-            <h2>Work With Us</h2>
-            <p>
-                Want cinematic photos or videos for your project?
-            </p>
-            <a href="../book/index.html">Book a Shoot</a>
-
-         </section>
-
-        <footer>
-
-            <p>
-                © 2026 Godspeed Collective LLC ·
-                <a href="../assets/policies/terms.html">Temrs of Service</a>
-                <a href="../assets/policies/privacy.html">Privacy Policy</a>
-            </p>
-
-        </footer>
-
-        <script>
-            let lastScrollTop = 0;
-            const navbar = document.getElementById("navbar");
-
-            window.addEventListener("scroll", function () {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop) {
-                    navbar.style.top = "-80px";
-                }
-                else {
-                    navbar.style.top = "0";
-                }
-                lastScrollTop = scrollTop;
-            });
-        </script>
-
+        <script src="../assets/js/include.js"></script>
+        <script src="../assets/js/navScroll.js"></script>
         <script src="../assets/js/main.js"></script>
         
     </body>

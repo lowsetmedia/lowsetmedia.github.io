@@ -3,12 +3,8 @@
 
     <head>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device, initial-scale=1.0">
-        <title>LØWSET Media</title>
-        <link rel="stylesheet" href="../assets/css/global.css">
+        <div data-include="../assets/components/head.html"></div>
         <link rel="stylesheet" href="../assets/css/work_categories.css">
-        <link rel="icon" type="image/png" href="../assets/logos/logo.png">
 
         <script defer src="../assets/js/projects_loader.js"></script>
 
@@ -16,95 +12,41 @@
 
     <body>
 
-        <header id="navbar">
+        <div data-include="../assets/components/navbar.html"></div>
 
-            <nav class="nav-container">
+        <main>
 
-                <div class="brand">
-                    <span class="logo-text">LØWSET</span>
-                </div>
+            <!-- HERO SECTION -->
+            <section class="hero hero-small">
 
-                <div class="nav-right">
+                <div class="hero-content">
 
-                    <div class="nav-links">
-                        <a href="../home/index.html">Home</a>
-                        <a href="../work/index.html">Work</a>
-                        <a href="../films/index.html">Films</a>
-                        <a href="../book/index.html">Book</a>
-                        <a href="../godspeed/index.html">Godspeed</a>
-                    </div>
-
-                    <div class="hamburger" onclick="toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <h1>Automotive</h1>
 
                 </div>
 
-            </nav>
+            </section>
 
-            <div id="mobileMenu" class="mobile-menu">
-                <a href="../home/index.html">Home</a>
-                <a href="../work/index.html">Work</a>
-                <a href="../films/index.html">Films</a>
-                <a href="../book/index.html">Book</a>
-                <a href="../godspeed/index.html">Godspeed</a>
-            </div>
+            <!-- FILTER BUTTONS -->
+            <section class="filters">
 
-        </header>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cars">Cars</button>
+                <button class="filter-btn" data-filter="trucks">Trucks</button>
+                <button class="filter-btn" data-filter="motorcycles">Motorcycles</button>
+                <button class="filter-btn" data-filter="aviation">Aviation</button>
+                
+            </section>
 
-        <!-- HERO SECTION -->
-        <section class="hero hero-small">
+            <!-- PROJECT GRID - JS FILLS THIS -->
+            <section class="project-grid" id="projectGrid"></section>
 
-            <div class="hero-content">
+        </main>
 
-                <h1>Automotive</h1>
+        <div data-include="../assets/components/footer.html"></div>
 
-            </div>
-
-        </section>
-
-        <!-- FILTER BUTTONS -->
-        <section class="filters">
-
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="cars">Cars</button>
-            <button class="filter-btn" data-filter="trucks">Trucks</button>
-            <button class="filter-btn" data-filter="motorcycles">Motorcycles</button>
-            <button class="filter-btn" data-filter="aviation">Aviation</button>
-             
-        </section>
-
-        <!-- PROJECT GRID - JS FILLS THIS -->
-         <section class="project-grid" id="projectGrid"></section>
-
-        <footer>
-
-            <p>
-                © 2026 Godspeed Collective LLC ·
-                <a href="../assets/policies/terms.html">Temrs of Service</a>
-                <a href="../assets/policies/privacy.html">Privacy Policy</a>
-            </p>
-
-        </footer>
-
-        <script>
-            let lastScrollTop = 0;
-            const navbar = document.getElementById("navbar");
-
-            window.addEventListener("scroll", function () {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop) {
-                    navbar.style.top = "-80px";
-                }
-                else {
-                    navbar.style.top = "0";
-                }
-                lastScrollTop = scrollTop;
-            });
-        </script>
-
+        <script src="../assets/js/include.js"></script>
+        <script src="../assets/js/navScroll.js"></script>
         <script src="../assets/js/main.js"></script>
         
     </body>
