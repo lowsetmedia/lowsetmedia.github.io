@@ -1,14 +1,14 @@
 [
     {
-        "title": "1",
-        "category": "",
-        "image": "../assets/images/project_preview/",
-        "link": "../projects/"
+        "title": "10-05 - Caroline",
+        "category": "individual",
+        "image": "../assets/images/project_preview/portrait/1.webp",
+        "link": "../projects/portraits/10-05-2025_Caroline.html"
     },
     {
         "title": "2",
         "category": "",
-        "image": "../assets/images/project_preview/",
-        "link": "../projects/"
+        "image": "../assets/images/project_preview/portrait/",
+        "link": "../projects/portraits"
     }
 ]
