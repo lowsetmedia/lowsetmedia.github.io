@@ -12,7 +12,7 @@ fetch(jsonPath)
             const card = document.createElement("a")
             card.classList.add("project-card")
             card.dataset.category = project.category
-            card.href = project.link
+            card.href = `../projects/project.html?project=${project.slug}&cat=${pageName}`
 
             card.innerHTML = `
                 <img src="${project.image}" loading="lazy">

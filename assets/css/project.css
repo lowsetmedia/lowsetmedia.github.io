@@ -1,9 +1,3 @@
-/* Hero Section */
-.hero-small {
-  padding-top: calc(var(--navbar-height) + 1rem);
-  padding-bottom: 8rem;
-  text-align: center;
-}
 
 .project {padding-bottom:6rem;}
 

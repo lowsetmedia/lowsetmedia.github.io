@@ -66,23 +66,6 @@
   transform: scale(1.03);
 }
 
-/* =================================================
-   CTA SECTION
-   ================================================= */
-
-.section a {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 10px 22px;
-  border: 1px solid var(--color-text-main);
-  transition: var(--transition-normal);
-}
-
-.section a:hover {
-  background: var(--color-text-main);
-  color: var(--color-bg-main);
-}
-
 /**/
 
 .section {
