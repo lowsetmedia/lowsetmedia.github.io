@@ -19,6 +19,7 @@ fetch(`../assets/json/${category}.json`)
 
       const img = document.createElement("img")
       img.src = `${project.folder}/${i}.jpg`
+      img.loading="lazy"
 
       if (project.fullImages.includes(i)) {
         img.classList.add("full")
