@@ -65,13 +65,3 @@
 .work-grid img:hover {
   transform: scale(1.03);
 }
-
-/**/
-
-.section {
-  text-align: center;
-  padding: 3rem 1rem;
-  border-radius: 8px;
-  margin: 4rem 1rem 2rem;
-
-}

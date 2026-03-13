@@ -134,7 +134,13 @@ img {
   padding: 80px 24px;
 }
 
+.section {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  margin: 4rem 1rem 2rem;
 
+}
 
 
 /* ==== CALL TO ACTION BUTTON === */
