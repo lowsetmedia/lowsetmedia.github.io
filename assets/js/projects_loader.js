@@ -49,6 +49,13 @@ fetch(jsonPath)
                 const activeButtons = Array.from(filterButtons).filter(btn => btn.classList.contains("active"))
                 const activeFilters = activeButtons.map(btn => btn.dataset.filter)
 
+                // Update URL hash to reflect active filters
+                if (activeFilters.length === 0 || activeFilters.includes('all')) {
+                    history.replaceState(null, "", window.location.pathname)
+                } else {
+                    window.location.hash = activeFilters.join(",")
+                }
+
                 const cards = document.querySelectorAll(".project-card")
                 if (activeFilters.length === 0 || activeFilters.includes('all')) {
                     cards.forEach(card => {
@@ -65,5 +72,19 @@ fetch(jsonPath)
                 }
             })
         })
+
+        // Apply filter(s) from URL hash after filters and cards exist
+        const hash = window.location.hash.replace("#", "")
+
+        if (hash) {
+            const filters = hash.split(",") // allow multiple filters like #editorial,couples
+
+            filters.forEach(filter => {
+                const button = document.querySelector(`.filter-btn[data-filter="${filter}"]`)
+                if (button) {
+                    button.click()
+                }
+            })
+        }
 
     })

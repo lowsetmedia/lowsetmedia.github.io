@@ -51,24 +51,32 @@
 .services-list {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 40px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 44px;
 }
 
-.services-list li {
-  padding: 20px;
-  text-align: center;
+.service-card {
+  background: transparent;
   border: 1px solid var(--color-accent);
-  background: var(--color-bg-secondary);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-.services-list li:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255,255,255,0.2);
+.services-list li a {
+  display: block;
+  padding: 22px 24px;
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 /**/
@@ -91,7 +99,7 @@
 }
 
 .approach-list li::before {
-  content: "•";
+  /*content: "•";*/
   position: absolute;
   left: 0;
   opacity: 0.7;
@@ -102,4 +110,67 @@
   .services-list {
     grid-template-columns: 1fr;
   }
+}
+
+/**/
+
+.service-title {
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.service-desc {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--preview);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.35s ease, background-position 2s linear;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  background-position: bottom center;
+  transition: opacity 0.35s ease, background-position 2s linear;
+}
+
+.service-card:not(:hover)::before {
+  transition: opacity 0.35s ease, background-position 0.6s linear;
+}
+
+.service-card a {
+  position: relative;
+  z-index: 1;
+}
+
+.service-arrow {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.service-card:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(4px);
 }
