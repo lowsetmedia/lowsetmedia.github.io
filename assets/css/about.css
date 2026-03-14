@@ -153,7 +153,7 @@
 }
 
 .service-card:not(:hover)::before {
-  transition: opacity 0.35s ease, background-position 0.6s linear;
+  transition: opacity 0.35s ease, background-position 0.32s linear;
 }
 
 .service-card a {
