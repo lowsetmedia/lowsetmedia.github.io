@@ -63,13 +63,17 @@ fetch(`../assets/json/${category}.json`)
       // append immediately
       gallery.appendChild(img)
 
-      img.addEventListener('load', () => {
-        loadedImages++
+      // apply masonry right away so layout doesn't wait
+      scheduleMasonry()
 
+      img.addEventListener('load', () => {
         // fade in image
         img.style.opacity = 1
 
-        // progressive masonry
+        // update loaded count
+        loadedImages++
+
+        // progressive masonry (already scheduled above, optional to re-run)
         scheduleMasonry()
 
         // update loading bar
