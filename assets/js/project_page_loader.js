@@ -13,34 +13,26 @@ function applyMasonry() {
 }
 
 let masonryResizeTimer = null
-
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   clearTimeout(masonryResizeTimer)
-
-  masonryResizeTimer = setTimeout(() => {
-    requestAnimationFrame(() => {
-      applyMasonry()
-    })
-  }, 150)
+  masonryResizeTimer = setTimeout(() => requestAnimationFrame(() => applyMasonry()), 150)
 })
 
 const params = new URLSearchParams(window.location.search)
-
-const slug = params.get("project")
-const category = params.get("cat")
+const slug = params.get('project')
+const category = params.get('cat')
 
 fetch(`../assets/json/${category}.json`)
   .then(res => res.json())
   .then(projects => {
-
     const project = projects.find(p => p.slug === slug)
-
     if (!project) return
 
-    document.getElementById("project-title").textContent = project.title
+    document.getElementById('project-title').textContent = project.title
 
-    const gallery = document.querySelector(".project-gallery")
+    const gallery = document.querySelector('.project-gallery')
 
+    // Create loading bar
     const loadingBarContainer = document.createElement('div')
     loadingBarContainer.className = 'loading-bar'
     const loadingProgress = document.createElement('div')
@@ -49,6 +41,12 @@ fetch(`../assets/json/${category}.json`)
     document.body.appendChild(loadingBarContainer)
 
     let loadedImages = 0
+    let masonryTimer = null
+
+    function scheduleMasonry() {
+      clearTimeout(masonryTimer)
+      masonryTimer = setTimeout(() => applyMasonry(), 50)
+    }
 
     for (let i = 1; i <= project.imageCount; i++) {
       const img = document.createElement('img')
@@ -62,14 +60,17 @@ fetch(`../assets/json/${category}.json`)
         img.classList.add('full')
       }
 
+      // append immediately
+      gallery.appendChild(img)
+
       img.addEventListener('load', () => {
         loadedImages++
 
-        // fade in the image
+        // fade in image
         img.style.opacity = 1
 
         // progressive masonry
-        applyMasonry()
+        scheduleMasonry()
 
         // update loading bar
         const percent = Math.round((loadedImages / project.imageCount) * 100)
@@ -81,8 +82,5 @@ fetch(`../assets/json/${category}.json`)
           gallery.classList.add('loaded')
         }
       })
-
-      gallery.appendChild(img)
     }
-
-})
+  })
