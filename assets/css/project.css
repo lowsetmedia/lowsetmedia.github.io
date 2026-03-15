@@ -52,3 +52,31 @@
   background: #fff;
   transition: width 0.2s ease;
 }
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+#lightbox img {
+  max-width: 92%;
+  max-height: 92%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 42px;
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+}

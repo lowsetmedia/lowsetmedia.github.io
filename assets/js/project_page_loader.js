@@ -63,6 +63,14 @@ fetch(`../assets/json/${category}.json`)
       // append immediately
       gallery.appendChild(img)
 
+      img.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox')
+        const lightboxImg = document.getElementById('lightbox-img')
+
+        lightbox.style.display = 'flex'
+        lightboxImg.src = img.src
+      })
+
       // apply masonry right away so layout doesn't wait
       scheduleMasonry()
 
@@ -88,3 +96,28 @@ fetch(`../assets/json/${category}.json`)
       })
     }
   })
+
+// Lightbox controls
+const lightbox = document.getElementById('lightbox')
+const lightboxImg = document.getElementById('lightbox-img')
+const closeBtn = document.getElementById('lightbox-close')
+
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none'
+  })
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = 'none'
+    }
+  })
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox) {
+    lightbox.style.display = 'none'
+  }
+})
