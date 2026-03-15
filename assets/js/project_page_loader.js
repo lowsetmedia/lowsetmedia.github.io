@@ -40,30 +40,49 @@ fetch(`../assets/json/${category}.json`)
     document.getElementById("project-title").textContent = project.title
 
     const gallery = document.querySelector(".project-gallery")
+
+    const loadingBarContainer = document.createElement('div')
+    loadingBarContainer.className = 'loading-bar'
+    const loadingProgress = document.createElement('div')
+    loadingProgress.className = 'loading-progress'
+    loadingBarContainer.appendChild(loadingProgress)
+    document.body.appendChild(loadingBarContainer)
+
     let loadedImages = 0
 
     for (let i = 1; i <= project.imageCount; i++) {
-
-      const img = document.createElement("img")
+      const img = document.createElement('img')
       img.src = `${project.folder}/${i}.jpg`
-      img.loading="lazy"
-      img.decoding="async"
+      img.loading = 'lazy'
+      img.decoding = 'async'
+      img.style.opacity = 0
+      img.style.transition = 'opacity 0.5s ease'
 
-      img.addEventListener("load", () => {
+      if (project.fullImages.includes(i)) {
+        img.classList.add('full')
+      }
+
+      img.addEventListener('load', () => {
         loadedImages++
 
+        // fade in the image
+        img.style.opacity = 1
+
+        // progressive masonry
+        applyMasonry()
+
+        // update loading bar
+        const percent = Math.round((loadedImages / project.imageCount) * 100)
+        loadingProgress.style.width = percent + '%'
+
+        // hide loading bar when done
         if (loadedImages === project.imageCount) {
-          applyMasonry()
-          gallery.classList.add("loaded")
+          loadingBarContainer.style.display = 'none'
+          gallery.classList.add('loaded')
         }
       })
 
-      if (project.fullImages.includes(i)) {
-        img.classList.add("full")
-      }
-
       gallery.appendChild(img)
-
     }
 
 })
